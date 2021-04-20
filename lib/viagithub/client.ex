@@ -14,15 +14,18 @@ defmodule ConsumingApis.ViaGithub.Client do
   end
 
   def handle_get(%Env{status: 200, body: body }) do
-     Enum.map(body, fn item ->
+    repos = Enum.map(body, fn item ->
         %{
           "id" => item["id"],
           "name" => item["name"],
           "description" => item["description"],
           "stargazers" => item["stargazer"],
           "html_url" => item["html_url,"]
-      }
+        }
       end)
+
+      {:ok, repos}
+
   end
 
 end
