@@ -18,6 +18,10 @@ config :consuming_apis, ConsumingApisWeb.Endpoint,
   pubsub_server: ConsumingApis.PubSub,
   live_view: [signing_salt: "kh0FMwx7"]
 
+config :consuming_apis, ConsumingApis.Guardian,
+  issuer: "consuming_apis",
+  secret_key: "RSF55dkO5aT95Jzu7HZx2spERfUOqePHsq+souFt7pthc54wYnWyZsMwGY/b4vK3"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

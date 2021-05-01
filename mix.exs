@@ -45,6 +45,9 @@ defmodule ConsumingApis.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:tesla, "~> 1.4.0"},
       {:hackney, "~> 1.17.0"},
+      {:guardian, "~> 2.0"},
+      {:pbkdf2_elixir, "~> 1.4"},
+
     ]
   end
 
