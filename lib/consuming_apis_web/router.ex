@@ -8,7 +8,8 @@ defmodule ConsumingApisWeb.Router do
   scope "/api", ConsumingApisWeb do
     pipe_through :api
     get "/repos/:name", GithubController, :show
-
+    post "/user/create", UsersController, :create
+    post "/user/auth", UsersController, :auth
   end
 
   # Enables LiveDashboard only for development
@@ -27,3 +28,14 @@ defmodule ConsumingApisWeb.Router do
     end
   end
 end
+
+# list =[
+#   %{name: "roger", last_name: "peters", age: 22},
+#   %{name: "roger", last_name: "peters", age: 22},
+#   %{name: "roger", last_name: "peters", age: 22},
+#   %{name: "roger", last_name: "peters", age: 22}
+# ]
+# Enum.map(list,
+#   fn entry -> Enum.map(entry, fn {k, v} -> IO.puts(k, v)
+#   end)
+# end)
